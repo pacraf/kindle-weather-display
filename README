@@ -8,6 +8,7 @@ this fork is based on oryginal project, but:
 
 - data source - OpenWeatherMap - using free plan api - means 5 days forecast
 to use it, edit python file with your api key, and city id.
+It is worth to mention that the hard job of handling API is done by pyowm package.
 
 in my case it was neccesary to add on begining of python file some coding information (UTF-8), otherwise polish language characters were not
 processed. 
@@ -16,9 +17,10 @@ processed.
 server is running on orange pi zero (armbian) with added:
 sudo apt-get install librsvg2-bin
 sudo apt-get install pngcrush
+pip install pyowm
 
 I have to admit that librsvg2-bin was installed with some error at the end, but it works for this project anyway.
-
+I tried to use ImageMagisk, as adviced soemwhere on net, but it has a bug and all icons are processed on the same coordinates. librsvg is doing the job just perfect
 Because of laziness, my armbian on orangepi zero is serving weather file using already installed 'openmediavault' package.
 That's why processed weather file is just moved to /var/www/openmediavault/
 You should use your own server and path 
