@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "Running Remove Weather cron Job" >>../documents/weatherlog.txt
+mntroot rw
+grep -iv weather /etc/crontab/root >noweather
+rm -f ../cron.bak
+mv /etc/crontab/root ../cron.bak
+mv noweather /etc/crontab/root
+echo "New /etc/crontab/root:" >>../documents/weatherlog.txt
+cat /etc/crontab/root >>../documents/weatherlog.txt
+/etc/init.d/cron restart >>../documents/weatherlog.txt 2>>&1

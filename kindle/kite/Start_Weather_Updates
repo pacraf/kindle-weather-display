@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "Running Start Weather Updates"
+/etc/init.d/framework stop
+/etc/init.d/powerd stop
+. "../Display_Weather"

@@ -1,0 +1,12 @@
+#!/bin/sh
+echo "Running Add Weather cron Job" >>../documents/weatherlog.txt
+# Make sure we don't add multiple cron jobs
+. "./Remove_Weather_cron_Job"
+
+mntroot rw
+rm -f ../cron.bak
+cp /etc/crontab/root ../cron.bak
+echo "*/30 * * * * /mnt/us/Display_Weather" >>/etc/crontab/root
+echo "New /etc/crontab/root:" >>../documents/weatherlog.txt
+cat /etc/crontab/root >> ../documents/weatherlog.txt
+/etc/init.d/cron restart >> ../documents/weatherlog.txt 2>>&1
