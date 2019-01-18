@@ -8,9 +8,9 @@ import datetime
 from pyowm import OWM , timeutils
 
 
-API_key = 'e50fce3e6e5761cd48860978982f3a11'
+API_key = 'xxxxxxxxxxxxxxxx'
 owm = OWM(API_key)
-#obs = owm.weather_at_id(7532706)
+#obs = owm.weather_at_id(xxxx)
 #w=obs.get_weather()
 
 fc = owm.three_hours_forecast_at_id(7532706)
