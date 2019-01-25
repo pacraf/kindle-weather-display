@@ -25,3 +25,10 @@ Because of laziness, my armbian on orangepi zero is serving weather file using a
 That's why processed weather file is just moved to /var/www/openmediavault/ ( .sh script - you should use your own server and path) 
 
 you can use cron to execute daily this script. In my case it is executed by Node-red instance running on my orange pi zero board. 
+
+
+*********update
+
+I don't know why, but during developing this project I observed that OWM forecast are far from precise. temperatatures durig winter time were prodicted o much lower than they happened to be. So I decided to give a try to another service dark sky.
+now "ds" version is in testing.
+
